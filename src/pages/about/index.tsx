@@ -280,8 +280,8 @@ function CTASection() {
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             Whether you're a prospective student, parent, or community member,
-            we invite you to connect with us and discover what makes EduLearn
-            special.
+            we invite you to connect with us and discover what makes Temas
+            Training Hub special.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* <Button size="lg" className="gap-2">
