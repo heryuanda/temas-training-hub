@@ -13,27 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components/ui/select";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../components/ui/tabs";
 import { Card, CardContent } from "../../components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../../components/ui/accordion";
-import {
-  CheckCircle2,
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  AlertCircle,
-} from "lucide-react";
+import { CheckCircle2, MapPin, Phone, Mail, AlertCircle } from "lucide-react";
 import { Toaster } from "../../components/ui/sonner";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
@@ -153,7 +134,7 @@ function ContactInfoSection() {
 }
 
 function ContactFormSection() {
-  const [formType, setFormType] = useState("feedback");
+  //   const [formType, setFormType] = useState("feedback");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -421,84 +402,6 @@ function ContactFormSection() {
               </Button>
             </form>
           )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FAQSection() {
-  return (
-    <section className="py-12 md:py-16">
-      <div className="container">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-muted-foreground">
-              Find quick answers to common questions about contacting us and our
-              response times.
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                What is the typical response time for inquiries?
-              </AccordionTrigger>
-              <AccordionContent>
-                We strive to respond to all inquiries within 24-48 business
-                hours. For urgent matters, we recommend calling our main office
-                directly at +1 (123) 456-7890.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                How can I schedule a campus tour?
-              </AccordionTrigger>
-              <AccordionContent>
-                Campus tours can be scheduled through our Admissions Office. You
-                can request a tour by calling +1 (123) 456-7891, emailing
-                admissions@edulearn.com, or using our online scheduling tool on
-                the Admissions page.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                Who should I contact about financial aid?
-              </AccordionTrigger>
-              <AccordionContent>
-                For questions about financial aid, scholarships, or tuition
-                payments, please contact our Financial Aid Office at
-                financial.aid@edulearn.com or call +1 (123) 456-7893. They can
-                provide information about available aid options and guide you
-                through the application process.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                How do I report technical issues with the website or student
-                portal?
-              </AccordionTrigger>
-              <AccordionContent>
-                Technical issues can be reported to our IT Support team at
-                it.support@edulearn.com or by calling +1 (123) 456-7896. Please
-                include details about the issue you're experiencing, including
-                any error messages and the device/browser you're using.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-5">
-              <AccordionTrigger>Is my feedback anonymous?</AccordionTrigger>
-              <AccordionContent>
-                You have the option to submit feedback anonymously by checking
-                the "Submit Anonymously" box on our feedback form. If you choose
-                this option, we won't collect your name or contact information.
-                However, if you'd like us to follow up on your feedback, you'll
-                need to provide your contact details.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
         </div>
       </div>
     </section>

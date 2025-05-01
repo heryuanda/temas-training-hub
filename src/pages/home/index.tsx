@@ -239,141 +239,141 @@ function ProgramsSection() {
   );
 }
 
-function TestimonialsSection() {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      program: "Computer Science",
-      image: "https://via.placeholder.com/100",
-      quote:
-        "The professors are incredibly knowledgeable and supportive. I've gained practical skills that have already helped me secure an internship at a top tech company.",
-      year: "3rd Year Student",
-    },
-    {
-      name: "Michael Chen",
-      program: "Business Administration",
-      image: "https://via.placeholder.com/100",
-      quote:
-        "The networking opportunities at EduLearn are unmatched. The curriculum is designed to prepare you for real-world challenges in the business world.",
-      year: "Recent Graduate",
-    },
-    {
-      name: "Priya Patel",
-      program: "Graphic Design",
-      image: "https://via.placeholder.com/100",
-      quote:
-        "The creative environment and industry-standard tools available to students have helped me build an impressive portfolio that stands out to employers.",
-      year: "2nd Year Student",
-    },
-  ];
+// function TestimonialsSection() {
+//   const testimonials = [
+//     {
+//       name: "Sarah Johnson",
+//       program: "Computer Science",
+//       image: "https://via.placeholder.com/100",
+//       quote:
+//         "The professors are incredibly knowledgeable and supportive. I've gained practical skills that have already helped me secure an internship at a top tech company.",
+//       year: "3rd Year Student",
+//     },
+//     {
+//       name: "Michael Chen",
+//       program: "Business Administration",
+//       image: "https://via.placeholder.com/100",
+//       quote:
+//         "The networking opportunities at EduLearn are unmatched. The curriculum is designed to prepare you for real-world challenges in the business world.",
+//       year: "Recent Graduate",
+//     },
+//     {
+//       name: "Priya Patel",
+//       program: "Graphic Design",
+//       image: "https://via.placeholder.com/100",
+//       quote:
+//         "The creative environment and industry-standard tools available to students have helped me build an impressive portfolio that stands out to employers.",
+//       year: "2nd Year Student",
+//     },
+//   ];
 
-  return (
-    <section id="testimonials" className="py-16 bg-white">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Student Testimonials
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Hear what our students have to say about their educational journey
-            with us.
-          </p>
-        </div>
+//   return (
+//     <section id="testimonials" className="py-16 bg-white">
+//       <div className="container">
+//         <div className="text-center mb-12">
+//           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+//             Student Testimonials
+//           </h2>
+//           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+//             Hear what our students have to say about their educational journey
+//             with us.
+//           </p>
+//         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-slate-50 p-6 rounded-lg shadow-sm relative"
-            >
-              <div className="absolute text-slate-200 -top-4 left-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="64"
-                  height="64"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="opacity-20"
-                >
-                  <path d="M11.3 3.3c-3.8 0-6.8 3.1-6.8 7v10.3h10.9V10.2H8.5c0-1.3 1-2.4 2.3-2.4h.5V3.3h-.5zm9.1 0c-3.8 0-6.8 3.1-6.8 7v10.3h10.9V10.2h-6.8c0-1.3 1-2.4 2.3-2.4h.5V3.3h-.5z" />
-                </svg>
-              </div>
+//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+//           {testimonials.map((testimonial, index) => (
+//             <div
+//               key={index}
+//               className="bg-slate-50 p-6 rounded-lg shadow-sm relative"
+//             >
+//               <div className="absolute text-slate-200 -top-4 left-4">
+//                 <svg
+//                   xmlns="http://www.w3.org/2000/svg"
+//                   width="64"
+//                   height="64"
+//                   viewBox="0 0 24 24"
+//                   fill="currentColor"
+//                   className="opacity-20"
+//                 >
+//                   <path d="M11.3 3.3c-3.8 0-6.8 3.1-6.8 7v10.3h10.9V10.2H8.5c0-1.3 1-2.4 2.3-2.4h.5V3.3h-.5zm9.1 0c-3.8 0-6.8 3.1-6.8 7v10.3h10.9V10.2h-6.8c0-1.3 1-2.4 2.3-2.4h.5V3.3h-.5z" />
+//                 </svg>
+//               </div>
 
-              <div className="flex items-center mb-4">
-                <img
-                  src={testimonial.image || "/placeholder.svg"}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-primary"
-                />
-                <div>
-                  <h3 className="font-bold">{testimonial.name}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.program}
-                  </p>
-                  <p className="text-xs text-primary">{testimonial.year}</p>
-                </div>
-              </div>
+//               <div className="flex items-center mb-4">
+//                 <img
+//                   src={testimonial.image || "/placeholder.svg"}
+//                   alt={testimonial.name}
+//                   className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-primary"
+//                 />
+//                 <div>
+//                   <h3 className="font-bold">{testimonial.name}</h3>
+//                   <p className="text-sm text-muted-foreground">
+//                     {testimonial.program}
+//                   </p>
+//                   <p className="text-xs text-primary">{testimonial.year}</p>
+//                 </div>
+//               </div>
 
-              <p className="italic relative z-10">{testimonial.quote}</p>
-            </div>
-          ))}
-        </div>
+//               <p className="italic relative z-10">{testimonial.quote}</p>
+//             </div>
+//           ))}
+//         </div>
 
-        <div className="mt-12 text-center">
-          <Button variant="outline">Read More Stories</Button>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div className="mt-12 text-center">
+//           <Button variant="outline">Read More Stories</Button>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
-function PartnersSection() {
-  const partners = [
-    { name: "Microsoft", logo: "https://via.placeholder.com/160x80" },
-    { name: "Google", logo: "https://via.placeholder.com/160x80" },
-    { name: "Amazon", logo: "https://via.placeholder.com/160x80" },
-    { name: "IBM", logo: "https://via.placeholder.com/160x80" },
-    { name: "Oracle", logo: "https://via.placeholder.com/160x80" },
-    { name: "Meta", logo: "https://via.placeholder.com/160x80" },
-    { name: "Apple", logo: "https://via.placeholder.com/160x80" },
-    { name: "Cisco", logo: "https://via.placeholder.com/160x80" },
-  ];
+// function PartnersSection() {
+//   const partners = [
+//     { name: "Microsoft", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Google", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Amazon", logo: "https://via.placeholder.com/160x80" },
+//     { name: "IBM", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Oracle", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Meta", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Apple", logo: "https://via.placeholder.com/160x80" },
+//     { name: "Cisco", logo: "https://via.placeholder.com/160x80" },
+//   ];
 
-  return (
-    <section id="partners" className="py-16">
-      <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Our Partners
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-            We collaborate with leading companies and institutions to provide
-            our students with the best opportunities.
-          </p>
-        </div>
+//   return (
+//     <section id="partners" className="py-16">
+//       <div className="container">
+//         <div className="text-center mb-12">
+//           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+//             Our Partners
+//           </h2>
+//           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+//             We collaborate with leading companies and institutions to provide
+//             our students with the best opportunities.
+//           </p>
+//         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center p-6 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <img
-                src={partner.logo || "/placeholder.svg"}
-                alt={partner.name}
-                className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all"
-              />
-            </div>
-          ))}
-        </div>
+//         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+//           {partners.map((partner, index) => (
+//             <div
+//               key={index}
+//               className="flex items-center justify-center p-6 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
+//             >
+//               <img
+//                 src={partner.logo || "/placeholder.svg"}
+//                 alt={partner.name}
+//                 className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all"
+//               />
+//             </div>
+//           ))}
+//         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">
-            Interested in becoming a partner? Contact us today!
-          </p>
-          <Button variant="outline">Become a Partner</Button>
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div className="mt-12 text-center">
+//           <p className="text-muted-foreground mb-4">
+//             Interested in becoming a partner? Contact us today!
+//           </p>
+//           <Button variant="outline">Become a Partner</Button>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
