@@ -45,7 +45,11 @@ function HeroSection() {
     <section className="relative pt-8 bg-white">
       <div className="container">
         <div className="relative">
-          <img src={hero} alt="about" />
+          <img
+            src={hero}
+            alt="about"
+            className="rounded-lg h-[200px] lg:h-auto md:h-auto sm:h-auto object-cover"
+          />
           <p className="absolute text-3xl lg:text-8xl md:text-7xl sm:text-6xl w-full text-center text-base-blue font-semibold left-0 top-1/2 transform -translate-y-1/2">
             Get to Know Us!
           </p>

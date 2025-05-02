@@ -9,7 +9,9 @@ import {
 import { cn } from "../../lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import hero1 from "../../assets/hero1.png";
+import hero1 from "../../assets/home-hero-1.png";
+import hero2 from "../../assets/home-hero-2.png";
+import hero3 from "../../assets/home-hero-3.png";
 import classthumbnail1 from "../../assets/class-thumbnail1.png";
 import classthumbnail2 from "../../assets/class-thumbnail2.png";
 import { useNavigate } from "react-router-dom";
@@ -54,7 +56,13 @@ function HeroCarousel() {
         "Discover our wide range of programs designed to help you succeed in today's competitive world.",
     },
     {
-      image: hero1,
+      image: hero2,
+      title: "Unlock Your Potential with Quality Education",
+      description:
+        "Discover our wide range of programs designed to help you succeed in today's competitive world.",
+    },
+    {
+      image: hero3,
       title: "Unlock Your Potential with Quality Education",
       description:
         "Discover our wide range of programs designed to help you succeed in today's competitive world.",
@@ -71,7 +79,7 @@ function HeroCarousel() {
 
   return (
     <section className="relative overflow-hidden py-6 container">
-      <div className="relative h-[240px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+      <div className="relative h-[200px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
         {slides.map((slide, index) => (
           <div
             key={index}
