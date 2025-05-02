@@ -164,7 +164,7 @@ function HeroSection({ data }: DataProps) {
                   <DialogHeader>
                     <DialogTitle>Enrollment</DialogTitle>
                     <DialogDescription>
-                      <p>
+                      <p className="text-left">
                         We are preparing the seemless process of program
                         enrollment. In the meantime please do reach out our
                         administration team through:

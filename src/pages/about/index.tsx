@@ -46,7 +46,7 @@ function HeroSection() {
       <div className="container">
         <div className="relative">
           <img src={hero} alt="about" />
-          <p className="absolute text-8xl w-full text-center text-base-blue font-semibold left-0 top-1/2 transform -translate-y-1/2">
+          <p className="absolute text-3xl lg:text-8xl md:text-7xl sm:text-6xl w-full text-center text-base-blue font-semibold left-0 top-1/2 transform -translate-y-1/2">
             Get to Know Us!
           </p>
         </div>
@@ -71,7 +71,7 @@ function MissionSection() {
             prepares crew for success in a rapidly changing world.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
           <div className="">
             <img
               src={about1}

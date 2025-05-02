@@ -71,7 +71,7 @@ function HeroCarousel() {
 
   return (
     <section className="relative overflow-hidden py-6 container">
-      <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+      <div className="relative h-[240px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -85,7 +85,7 @@ function HeroCarousel() {
             <img
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
-              className="absolute inset-0 h-full object-cover left-1/2 transform -translate-x-1/2"
+              className="absolute inset-0 h-auto lg:h-full sm:w-full md:w-full lg:w-auto object-cover left-1/2 transform -translate-x-1/2"
               style={{ objectFit: "cover" }}
             />
             {/* <div className="absolute inset-0 bg-black/40" /> */}

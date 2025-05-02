@@ -121,8 +121,8 @@ function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-50 bg-background p-6 animate-in slide-in-from-top-5">
-          <nav className="flex flex-col gap-6">
+        <div className="md:hidden bg-white fixed inset-0 top-16 z-50 animate-in slide-in-from-top-5 w-full">
+          <nav className="flex flex-col gap-6 bg-white p-6">
             <Link
               to="/"
               className="text-lg font-medium transition-colors hover:text-primary"
@@ -153,10 +153,15 @@ function Header() {
             </Link>
 
             <div className="flex flex-col gap-4 mt-4">
-              <Button variant="outline" className="w-full">
+              <Button
+                variant="outline"
+                className="w-full border-2 border-base-blue"
+              >
                 Log In
               </Button>
-              <Button className="w-full">Register</Button>
+              <Button className="w-full bg-base-blue hover:bg-base-dark-blue text-white">
+                Register
+              </Button>
             </div>
           </nav>
         </div>

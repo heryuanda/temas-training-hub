@@ -107,7 +107,7 @@ function ContactInfoSection() {
   return (
     <section className="py-12 md:py-16">
       <div className="container">
-        <div className="grid gap-8 grid-cols-3">
+        <div className="grid gap-8 grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
           {contactCards.map((card, index) => (
             <Card key={index} className="overflow-hidden py-0">
               <CardContent className="p-6">
