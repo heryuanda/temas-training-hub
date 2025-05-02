@@ -70,16 +70,16 @@ function Header() {
             Home
           </Link>
           <Link
-            to="programs"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Programs
-          </Link>
-          <Link
             to="about-us"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             About
+          </Link>
+          <Link
+            to="programs"
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Programs
           </Link>
           <Link
             to="contact-us"
@@ -131,18 +131,18 @@ function Header() {
               Home
             </Link>
             <Link
-              to="/programs"
-              className="text-lg font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Programs
-            </Link>
-            <Link
               to="/about-us"
               className="text-lg font-medium transition-colors hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
               About
+            </Link>
+            <Link
+              to="/programs"
+              className="text-lg font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Programs
             </Link>
             <Link
               to="/contact-us"
@@ -295,18 +295,18 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  to="/programs"
-                  className="text-white hover:text-white transition-colors text-sm"
-                >
-                  Programs
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/about-us"
                   className="text-white hover:text-white transition-colors text-sm"
                 >
                   About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/programs"
+                  className="text-white hover:text-white transition-colors text-sm"
+                >
+                  Programs
                 </Link>
               </li>
               <li>
@@ -332,7 +332,7 @@ function Footer() {
                   href="tel:+62214302388"
                   className="hover:text-white transition-colors flex items-center gap-x-2 text-sm"
                 >
-                  <Phone size={16} /> (+62)214302388
+                  <Phone size={16} /> (+62)21-430 2388. Ext: 638.
                 </a>
               </p>
               <p>

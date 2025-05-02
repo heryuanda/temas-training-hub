@@ -95,7 +95,7 @@ function ContactInfoSection() {
     {
       title: "Phone",
       icon: <Phone className="h-6 w-6" />,
-      details: ["(+62)214302388"],
+      details: ["(+62)21-430 2388. Ext: 638."],
     },
     {
       title: "Email",

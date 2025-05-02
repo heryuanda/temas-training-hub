@@ -175,7 +175,7 @@ function HeroSection({ data }: DataProps) {
                             href="tel:+62214302388"
                             className=" transition-colors flex items-center gap-x-2 text-sm"
                           >
-                            <Phone size={16} /> (+62)214302388
+                            <Phone size={16} /> (+62)21-430 2388. Ext: 638.
                           </a>
                         </li>
                         <li>
