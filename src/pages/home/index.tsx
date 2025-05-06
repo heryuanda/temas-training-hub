@@ -78,8 +78,8 @@ function HeroCarousel() {
   };
 
   return (
-    <section className="relative overflow-hidden py-6 container">
-      <div className="relative h-[200px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+    <section className="relative overflow-hidden pb-6 pt-4 container">
+      <div className="relative h-[200px] sm:h-[400px] md:h-[500px] lg:h-[620px]">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -93,8 +93,7 @@ function HeroCarousel() {
             <img
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
-              className="absolute inset-0 h-auto lg:h-full sm:w-full md:w-full lg:w-auto object-cover left-1/2 transform -translate-x-1/2"
-              style={{ objectFit: "cover" }}
+              className="absolute inset-0 h-auto w-full lg:w-[98%] left-1/2 transform -translate-x-1/2"
             />
             {/* <div className="absolute inset-0 bg-black/40" /> */}
             {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
@@ -138,7 +137,7 @@ function HeroCarousel() {
       </button>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* <div className="absolute lg:bottom-14 sm:bottom-20 bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -150,7 +149,7 @@ function HeroCarousel() {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

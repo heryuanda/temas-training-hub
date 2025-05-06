@@ -337,10 +337,10 @@ function Footer() {
               </p>
               <p>
                 <a
-                  href="mailto:pttemastraininghub@gmail.com"
+                  href="mailto:admin@temastraininghub.com"
                   className="hover:text-white transition-colors flex items-center gap-x-2 text-sm"
                 >
-                  <Mail size={16} /> pttemastraininghub@gmail.com
+                  <Mail size={16} /> admin@temastraininghub.com
                 </a>
               </p>
             </address>

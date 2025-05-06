@@ -90,14 +90,20 @@ function ProgramsSection() {
   };
   const programsStcw = [
     {
-      title: "IGF Code Basic",
+      title: [
+        "Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels",
+        "(Basic IGF Code)",
+      ],
       description:
         "This course introduces the fundamentals of gas fuels, including LNG, LPG, and alternative fuels, focusing on safety, regulations, and operational practices. Participants will learn about international standards, fuel types, and the environmental impact of gas fuels.",
       slug: "igf-code-basic",
       level: "Basic",
     },
     {
-      title: "IGF Code Advanced",
+      title: [
+        "Advanced International Code of Safety for Ships using Gases or other Low-flashpoint Fuels",
+        "(Advanced IGF Code)",
+      ],
       description:
         "This advanced course explores the technical, regulatory, and operational complexities of gas fuel systems, including LNG, LPG, and fuel management strategies. Participants will gain in-depth knowledge of safety, emissions control, and advanced industry standards.",
       slug: "igf-code-advanced",
@@ -149,7 +155,9 @@ function ProgramsSection() {
                 >
                   <CardHeader>
                     <CardTitle className="leading-normal text-2xl">
-                      {program.title}
+                      {program.title.map((caption) => (
+                        <p>{caption}</p>
+                      ))}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="z-10">

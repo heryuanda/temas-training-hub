@@ -13,6 +13,14 @@ import {
   DialogTrigger,
 } from "../../components/ui/dialog";
 import { Mail, Phone } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "../../components/ui/breadcrumb";
 
 type Program = {
   title: string;
@@ -27,6 +35,7 @@ type Program = {
   certificate: string;
   materials: string;
   level: string;
+  price: string;
 };
 
 type programTypeWrapper = {
@@ -48,7 +57,8 @@ function ProgramDetail() {
 
   const programData: programTypeWrapper = {
     "igf-code-basic": {
-      title: "IGF Code Basic",
+      title:
+        "Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (Basic IGF Code)",
       brief:
         "This course introduces the fundamentals of gas fuels, including LNG, LPG, and alternative fuels, focusing on safety, regulations, and operational practices. Participants will learn about international standards, fuel types, and the environmental impact of gas fuels.",
       goals:
@@ -64,22 +74,28 @@ function ProgramDetail() {
       portion: "80% Theory, 20% Practical",
       duration: "30 Hours",
       assessment: "Pre-test & Post-test (passing score: 70%)",
-      prerequisite: "BST, AFF, MEFA, SCRB certificates",
-      participants: "All LNG Crews",
-      certificate: "STCW Certificates",
-      materials: "Books, Handouts, Tools, Equipments",
+      prerequisite:
+        "Basic Safety Training (BST) & Advanced Fire Fighting (AFF) Certificates",
+      participants:
+        "This course is intended for vessel crew working on ships using gases or other low-flashpoint fuels",
+      certificate:
+        "Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels Certificate (Basic IGF Code)",
+      materials: "Books, Handouts, Tools, Equipment",
       level: "Basic",
+      price: "To Be Confirmed",
     },
     "igf-code-advanced": {
-      title: "IGF Code Advanced",
+      title:
+        "Advanced International Code of Safety for Ships Using Gases or Other Low-flashpoint Fuels (Advanced IGF Code)",
       brief:
-        "This course introduces the fundamentals of gas fuels, including LNG, LPG, and alternative fuels, focusing on safety, regulations, and operational practices. Participants will learn about international standards, fuel types, and the environmental impact of gas fuels.",
+        "This advanced course explores the technical, regulatory, and operational complexities of gas fuel systems, including LNG, LPG, and fuel management strategies. Participants will gain in-depth knowledge of safety, emissions control, and advanced industry standards.",
       goals:
         "To equip participants with advanced skills in gas fuel system design, risk management, regulatory compliance, and emerging technologies, preparing them to tackle complex challenges in the gas fuel industry.",
       syllabus: [
         "IGF code introduction & preparation.",
         "Familiarity with properties of gas fuels.",
         "Operate controls, engineering systems & safety.",
+        "Safely perform & monitor all operations.",
         "Plan & monitor safe bunkering.",
         "Preventing pollution to the environment.",
         "Compliance with legislative requirements.",
@@ -90,12 +106,15 @@ function ProgramDetail() {
       portion: "60% Theory, 40% Practical",
       duration: "32 Hours",
       assessment: "Pre-test & Post-test (passing score: 70%)",
-      prerequisite: "IGF Basic Certificate",
+      prerequisite:
+        "Basic Safety Training (BST), Advanced Fire Fighting (AFF), & Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (Basic IGF Code) Certificates",
       participants:
-        "Senior Officers, Junior Officers, Chief Engineer, Masinis 2, Masinis 3, Electrician",
-      certificate: "STCW certificate",
-      materials: "Books, Handouts, Tools, Equipments",
+        "This course is specifically intended for vessel crew at the level of Officers, Engineers, or Electricians who are working on ships that use gases or other low-flashpoint fuels.",
+      certificate:
+        "Advanced International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (Advanced IGF Code) Certificate",
+      materials: "Books, Handouts, Tools, Equipment",
       level: "Advance",
+      price: "To Be Confirmed",
     },
   };
 
@@ -134,8 +153,25 @@ type DataProps = {
 
 function HeroSection({ data }: DataProps) {
   return (
-    <section className="relative py-12 md:py-16 bg-slate-50">
-      <div className="container">
+    <section className="relative bg-slate-50">
+      <div className="container pt-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/programs">Programs</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{data.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="container py-12 md:py-16">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1 space-y-4">
             <div className="flex flex-wrap gap-2 mb-2">
@@ -146,18 +182,25 @@ function HeroSection({ data }: DataProps) {
                 Enrolling Now
               </Badge>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-base-blue">
+            <h1 className="text-3xl leading-tight md:text-4xl lg:text-5xl font-bold tracking-tight text-base-blue">
               {data.title}
             </h1>
             <p className="text-lg text-muted-foreground">{data.brief}</p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <Dialog>
+              <a
+                href="https://forms.office.com/r/vyyxPmdawQ"
+                target="_blank"
+                className="bg-base-blue py-2 px-4 font-medium rounded text-white inline-block hover:bg-base-dark-blue cursor-pointer"
+              >
+                Enroll Now
+              </a>
+              {/* <Dialog>
                 <DialogTrigger asChild>
                   <Button
                     size="lg"
                     className="bg-base-blue hover:bg-base-dark-blue cursor-pointer"
                   >
-                    Apply Now
+                    Enroll Now
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
@@ -180,10 +223,10 @@ function HeroSection({ data }: DataProps) {
                         </li>
                         <li>
                           <a
-                            href="mailto:pttemastraininghub@gmail.com"
+                            href="mailto:admin@temastraininghub.com"
                             className=" transition-colors flex items-center gap-x-2 text-sm"
                           >
-                            <Mail size={16} /> pttemastraininghub@gmail.com
+                            <Mail size={16} /> admin@temastraininghub.com
                           </a>
                         </li>
                       </ul>
@@ -195,11 +238,10 @@ function HeroSection({ data }: DataProps) {
                     </DialogClose>
                   </DialogFooter>
                 </DialogContent>
-              </Dialog>
-
-              <Button variant="outline" size="lg" className="cursor-pointer">
+              </Dialog> */}
+              {/* <Button variant="outline" size="lg" className="cursor-pointer">
                 Download Brochure
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -377,7 +419,7 @@ function ProgramOverview({ data }: DataProps) {
       <div className="container">
         <div className="grid gap-8 md:grid-cols-3">
           <div className="md:col-span-2 space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold">Program Goals</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">Goals</h2>
             <p>{data.goals}</p>
             <div className="pt-4">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Content</h2>

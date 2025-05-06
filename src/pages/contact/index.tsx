@@ -69,7 +69,7 @@ function HeroSection() {
               <Phone size={16} /> Call Us
             </a>
             <a
-              href="mailto:pttemastraininghub@gmail.com"
+              href="mailto:admin@temastraininghub.com"
               className="bg-white hover:bg-slate-100 transition-colors flex items-center gap-x-2 text-sm border rounded-md px-3 py-2"
             >
               <Mail size={16} /> Email Us
@@ -100,7 +100,7 @@ function ContactInfoSection() {
     {
       title: "Email",
       icon: <Mail className="h-6 w-6" />,
-      details: ["pttemastraininghub@gmail.com"],
+      details: ["admin@temastraininghub.com"],
     },
   ];
 
