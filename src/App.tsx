@@ -53,11 +53,11 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 py-2 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex items-center justify-between">
         <div className="flex items-center gap-2">
           <a href="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo" width={180} height={32} />
+            <img src={logo} alt="Logo" width={220} height={32} />
           </a>
         </div>
 
