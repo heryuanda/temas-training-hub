@@ -417,53 +417,68 @@ function ProgramOverview({ data }: DataProps) {
   return (
     <section className="py-12 md:py-16">
       <div className="container">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="md:col-span-2 space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold">Goals</h2>
-            <p>{data.goals}</p>
-            <div className="pt-4">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Content</h2>
-              <ul className="grid gap-3 bg-slate-50 border rounded-md p-6">
-                {data.syllabus.map((syllabus, index) => (
-                  <li className="flex items-start">
-                    <p className="whitespace-nowrap w-28 shrink-0">
-                      <strong>Chapter {index + 1}</strong>:
-                    </p>
-                    <p>{syllabus}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="space-y-6">
-            <div className="bg-slate-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Key Details</h3>
-              <div className="space-y-4">
-                {keyDetails.map((detail, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="text-primary">{detail.icon}</div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">
-                        {detail.label}
-                      </div>
-                      <div className="font-medium">{detail.value}</div>
-                    </div>
-                  </div>
-                ))}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="md:col-span-2 space-y-6">
+              <h2 className="text-2xl md:text-3xl font-bold">Goals</h2>
+              <p>{data.goals}</p>
+              <div className="pt-4">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">Content</h2>
+                <ul className="grid gap-3 bg-slate-50 border rounded-md p-6">
+                  {data.syllabus.map((syllabus, index) => (
+                    <li className="flex items-start">
+                      <p className="whitespace-nowrap w-28 shrink-0">
+                        <strong>Chapter {index + 1}</strong>:
+                      </p>
+                      <p>{syllabus}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div className="bg-primary/5 p-6 rounded-lg border border-primary/10">
-              <h3 className="text-xl font-semibold mb-4">Have Questions?</h3>
-              <p className="mb-4">
-                Our admissions team is here to help you with any questions about
-                the program, application process, or financial aid options.
-              </p>
-              <Button className="w-full" onClick={() => goTo("/contact-us")}>
-                Contact Us Now
-              </Button>
+            <div className="space-y-6">
+              <div className="bg-slate-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4">Key Details</h3>
+                <div className="space-y-4">
+                  {keyDetails.map((detail, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="text-primary">{detail.icon}</div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">
+                          {detail.label}
+                        </div>
+                        <div className="font-medium">{detail.value}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-primary/5 p-6 rounded-lg border border-primary/10">
+                <h3 className="text-xl font-semibold mb-4">Have Questions?</h3>
+                <p className="mb-4">
+                  Our admissions team is here to help you with any questions
+                  about the program, application process, or financial aid
+                  options.
+                </p>
+                <Button className="w-full" onClick={() => goTo("/contact-us")}>
+                  Contact Us Now
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

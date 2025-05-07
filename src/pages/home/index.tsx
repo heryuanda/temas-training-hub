@@ -190,25 +190,37 @@ function ProgramsSection() {
             for success in your chosen field.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[800px] mx-auto">
-          {programs.map((program, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden transition-all hover:shadow-lg pt-0 gap-4"
-            >
-              <div className="aspect-video relative px-6 pt-6">
-                <img
-                  src={program.image || "/placeholder.svg"}
-                  alt={program.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="leading-normal text-xl">
-                  {program.title}
-                </CardTitle>
-                {/* <CardDescription className="flex items-center gap-2">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[800px] mx-auto">
+            {programs.map((program, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden transition-all hover:shadow-lg pt-0 gap-4"
+              >
+                <div className="aspect-video relative px-6 pt-6">
+                  <img
+                    src={program.image || "/placeholder.svg"}
+                    alt={program.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="leading-normal text-xl">
+                    {program.title}
+                  </CardTitle>
+                  {/* <CardDescription className="flex items-center gap-2">
                   <span className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
                     {program.duration}
                   </span>
@@ -216,11 +228,11 @@ function ProgramsSection() {
                     {program.level}
                   </span>
                 </CardDescription> */}
-              </CardHeader>
-              <CardContent>
-                <p>{program.description}</p>
-              </CardContent>
-              {/* <CardFooter>
+                </CardHeader>
+                <CardContent>
+                  <p>{program.description}</p>
+                </CardContent>
+                {/* <CardFooter>
                 <Button
                   variant="default"
                   className="w-full bg-base-blue text-white hover:bg-base-dark-blue cursor-pointer"
@@ -228,9 +240,10 @@ function ProgramsSection() {
                   Learn More
                 </Button>
               </CardFooter> */}
-            </Card>
-          ))}
-        </div>
+              </Card>
+            ))}
+          </div>
+        </motion.div>
 
         <div className="mt-12 text-center">
           <Button

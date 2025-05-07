@@ -63,131 +63,160 @@ function MissionSection() {
   return (
     <section className="py-16 md:py-24">
       <div className="container">
-        <div className="text-center mb-12">
-          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-4">
-            Our Mission & Vision
-          </div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
-            We train and develop our shipping crew
-          </h2>
-          <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
-            We are committed to providing accessible, innovative education that
-            prepares crew for success in a rapidly changing world.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
-          <div className="">
-            <img
-              src={about1}
-              alt="vision-mission"
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-          <div className="grid gap-8 items-center ">
-            <div className="bg-base-blue/20 p-6 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="mb-6">
-                A professional maritime training center focused on safety,
-                technical expertise, leadership, environmental preservation, and
-                workforce readiness to positively contribute to the maritime
-                industry.
-              </p>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="text-center mb-12">
+            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-4">
+              Our Mission & Vision
             </div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
+              We train and develop our shipping crew
+            </h2>
+            <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+              We are committed to providing accessible, innovative education
+              that prepares crew for success in a rapidly changing world.
+            </p>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1">
+            <div className="">
+              <img
+                src={about1}
+                alt="vision-mission"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="grid gap-8 items-center ">
+              <div className="bg-base-blue/20 p-6 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                <p className="mb-6">
+                  A professional maritime training center focused on safety,
+                  technical expertise, leadership, environmental preservation,
+                  and workforce readiness to positively contribute to the
+                  maritime industry.
+                </p>
+              </div>
 
-            <div className="bg-base-blue/20 p-6 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                  <span>
-                    To deliver <strong>high-quality</strong>,{" "}
-                    <strong>comprehensive training</strong> programs that equip
-                    maritime community with the knowledge, practical skills, and
-                    ethical grounding needed for a successful maritime career.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                  <span>
-                    To facilitate <strong>dedicated</strong>,{" "}
-                    <strong>responsible and committed</strong> trainers and
-                    trainees.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                  <span>
-                    To establish a future-ready maritime training platform and
-                    community.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                  <span>
-                    To cultivate a thriving ecosystem that ensures mutual growth
-                    and optimal returns for all stakeholders.
-                  </span>
-                </li>
-              </ul>
+              <div className="bg-base-blue/20 p-6 rounded-lg">
+                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <span>
+                      To deliver <strong>high-quality</strong>,{" "}
+                      <strong>comprehensive training</strong> programs that
+                      equip maritime community with the knowledge, practical
+                      skills, and ethical grounding needed for a successful
+                      maritime career.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <span>
+                      To facilitate <strong>dedicated</strong>,{" "}
+                      <strong>responsible and committed</strong> trainers and
+                      trainees.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <span>
+                      To establish a future-ready maritime training platform and
+                      community.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="bg-primary/10 p-1 rounded-full text-primary mt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
+                    <span>
+                      To cultivate a thriving ecosystem that ensures mutual
+                      growth and optimal returns for all stakeholders.
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -236,18 +265,32 @@ function ValuesSection() {
   return (
     <section className="py-8">
       <div className="container">
-        <div className="text-center mb-12">
-          <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-4">
-            What We Stand For
-          </div>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
-            Our Core Values
-          </h2>
-          {/* <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="text-center mb-12">
+            <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-4">
+              What We Stand For
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
+              Our Core Values
+            </h2>
+            {/* <p className="mx-auto max-w-[700px] text-lg text-muted-foreground">
             These principles guide our decisions, shape our culture, and define
             our approach to education.
           </p> */}
-        </div>
+          </div>
+        </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
           {values.map((value, index) => (
@@ -278,17 +321,30 @@ function CTASection() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="container">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
-            Join Our Educational Community
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Whether you're a prospective student, parent, or community member,
-            we invite you to connect with us and discover what makes Temas
-            Training Hub special.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            {/* <Button size="lg" className="gap-2">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
+              Join Our Educational Community
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Whether you're a prospective student, parent, or community member,
+              we invite you to connect with us and discover what makes Temas
+              Training Hub special.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* <Button size="lg" className="gap-2">
               Apply Now{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -308,16 +364,17 @@ function CTASection() {
             <Button variant="outline" size="lg">
               Schedule a Visit
             </Button> */}
-            <Button
-              variant="outline"
-              size="lg"
-              className="cursor-pointer"
-              onClick={() => goTo("/contact-us")}
-            >
-              Contact Us
-            </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="cursor-pointer"
+                onClick={() => goTo("/contact-us")}
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

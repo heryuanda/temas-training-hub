@@ -147,52 +147,66 @@ function ProgramsSection() {
               Standard qualifications for captains, officers, and watchkeeping
               personnel on board merchant ships that are sailing.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[800px] mx-auto">
-              {programsStcw.map((program, index) => (
-                <Card
-                  key={index}
-                  className="overflow-hidden transition-all hover:shadow-lg gap-4 relative"
-                >
-                  <CardHeader>
-                    <CardTitle className="leading-normal text-2xl">
-                      {program.title.map((caption) => (
-                        <p>{caption}</p>
-                      ))}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="z-10">
-                    <p
-                      className={`text-sm mb-2 text-muted-foreground ${
-                        !program.description ? "h-[100px]" : "h-auto"
-                      }`}
-                    >
-                      {program.description}
-                    </p>
-                    {program.level && (
-                      <Badge className="bg-slate-200 text-slate-800 hover:bg-slate-300 border-none">
-                        {program.level}
-                      </Badge>
-                    )}
-                  </CardContent>
-                  <CardFooter className="z-10">
-                    <Button
-                      variant="default"
-                      onClick={() => goToDetail(program.slug)}
-                      disabled={!program.slug}
-                      className="w-full bg-base-blue text-white hover:bg-base-dark-blue cursor-pointer"
-                    >
-                      {program.slug ? "Learn More" : "Coming Soon"}
-                    </Button>
-                  </CardFooter>
-                  <img
-                    src={Certificate}
-                    alt="certificate"
-                    width={80}
-                    className="absolute right-2 top-2 -z-0 opacity-10"
-                  />
-                </Card>
-              ))}
-            </div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 100,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1,
+              }}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-[800px] mx-auto">
+                {programsStcw.map((program, index) => (
+                  <Card
+                    key={index}
+                    className="overflow-hidden transition-all hover:shadow-lg gap-4 relative"
+                  >
+                    <CardHeader>
+                      <CardTitle className="leading-normal text-2xl">
+                        {program.title.map((caption) => (
+                          <p>{caption}</p>
+                        ))}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="z-10">
+                      <p
+                        className={`text-sm mb-2 text-muted-foreground ${
+                          !program.description ? "h-[100px]" : "h-auto"
+                        }`}
+                      >
+                        {program.description}
+                      </p>
+                      {program.level && (
+                        <Badge className="bg-slate-200 text-slate-800 hover:bg-slate-300 border-none">
+                          {program.level}
+                        </Badge>
+                      )}
+                    </CardContent>
+                    <CardFooter className="z-10">
+                      <Button
+                        variant="default"
+                        onClick={() => goToDetail(program.slug)}
+                        disabled={!program.slug}
+                        className="w-full bg-base-blue text-white hover:bg-base-dark-blue cursor-pointer"
+                      >
+                        {program.slug ? "Learn More" : "Coming Soon"}
+                      </Button>
+                    </CardFooter>
+                    <img
+                      src={Certificate}
+                      alt="certificate"
+                      width={80}
+                      className="absolute right-2 top-2 -z-0 opacity-10"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </motion.div>
           </TabsContent>
           <TabsContent value="nonstcw">
             <p className="mt-4 font-bold text-center text-xl">
