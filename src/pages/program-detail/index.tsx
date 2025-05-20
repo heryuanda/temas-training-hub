@@ -2,17 +2,6 @@ import { Button } from "../../components/ui/button";
 import { Badge } from "../../components/ui/badge";
 import { motion } from "framer-motion";
 import { useNavigate, useParams } from "react-router-dom";
-// import {
-//   Dialog,
-//   DialogClose,
-//   DialogContent,
-//   DialogDescription,
-//   DialogFooter,
-//   DialogHeader,
-//   DialogTitle,
-//   DialogTrigger,
-// } from "../../components/ui/dialog";
-// import { Mail, Phone } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,7 +11,6 @@ import {
   BreadcrumbSeparator,
 } from "../../components/ui/breadcrumb";
 import { Card } from "@/components/ui/card";
-import { Check } from "lucide-react";
 
 type Program = {
   title: string;
