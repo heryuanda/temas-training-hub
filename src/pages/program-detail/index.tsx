@@ -21,6 +21,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../../components/ui/breadcrumb";
+import { Card } from "@/components/ui/card";
+import { Check } from "lucide-react";
 
 type Program = {
   title: string;
@@ -35,7 +37,12 @@ type Program = {
   certificate: string;
   materials: string;
   level: string;
+  prices: PriceObject[];
+};
+
+type PriceObject = {
   price: string;
+  label: string;
 };
 
 type programTypeWrapper = {
@@ -63,6 +70,12 @@ function ProgramDetail() {
         "This course introduces the fundamentals of gas fuels, including LNG, LPG, and alternative fuels, focusing on safety, regulations, and operational practices. Participants will learn about international standards, fuel types, and the environmental impact of gas fuels.",
       goals:
         "To equip participants with a basic understanding of gas fuels, safety protocols, and industry standards, enabling them to apply this knowledge in real-world settings and contribute to safe and sustainable gas fuel operations.",
+      prices: [
+        {
+          price: "Rp 2.800.000",
+          label: "",
+        },
+      ],
       syllabus: [
         "Knowledge and understanding of safety requirement and safety management on board ship subject to the IGF code.",
         "Take precautions to prevent hazards on a ship subject to the IGF code.",
@@ -82,7 +95,6 @@ function ProgramDetail() {
         "Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels Certificate (Basic IGF Code)",
       materials: "Books, Handouts, Tools, Equipment",
       level: "Basic",
-      price: "To Be Confirmed",
     },
     "igf-code-advanced": {
       title:
@@ -91,6 +103,20 @@ function ProgramDetail() {
         "This advanced course explores the technical, regulatory, and operational complexities of gas fuel systems, including LNG, LPG, and fuel management strategies. Participants will gain in-depth knowledge of safety, emissions control, and advanced industry standards.",
       goals:
         "To equip participants with advanced skills in gas fuel system design, risk management, regulatory compliance, and emerging technologies, preparing them to tackle complex challenges in the gas fuel industry.",
+      prices: [
+        {
+          price: "Rp 3.600.000",
+          label: "Theory",
+        },
+        {
+          price: "Rp 7.000.000",
+          label: "Practical",
+        },
+        {
+          price: "Rp 10.000.000",
+          label: "Theory + Practical",
+        },
+      ],
       syllabus: [
         "IGF code introduction & preparation.",
         "Familiarity with properties of gas fuels.",
@@ -114,7 +140,6 @@ function ProgramDetail() {
         "Advanced International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (Advanced IGF Code) Certificate",
       materials: "Books, Handouts, Tools, Equipment",
       level: "Advance",
-      price: "To Be Confirmed",
     },
   };
 
@@ -172,78 +197,71 @@ function HeroSection({ data }: DataProps) {
         </Breadcrumb>
       </div>
       <div className="container py-12 md:py-16">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="flex-1 space-y-4">
-            <div className="flex flex-wrap gap-2 mb-2">
-              <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-none">
-                {data.level}
-              </Badge>
-              <Badge className="bg-green-100 text-green-800 hover:bg-green-200 border-none">
-                Enrolling Now
-              </Badge>
-            </div>
-            <h1 className="text-3xl leading-tight md:text-4xl lg:text-5xl font-bold tracking-tight text-base-blue">
-              {data.title}
-            </h1>
-            <p className="text-lg text-muted-foreground">{data.brief}</p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a
-                href="https://forms.office.com/r/vyyxPmdawQ"
-                target="_blank"
-                className="bg-base-blue py-2 px-4 font-medium rounded text-white inline-block hover:bg-base-dark-blue cursor-pointer"
-              >
-                Enroll Now
-              </a>
-              {/* <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    size="lg"
-                    className="bg-base-blue hover:bg-base-dark-blue cursor-pointer"
-                  >
-                    Enroll Now
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Enrollment</DialogTitle>
-                    <DialogDescription>
-                      <p className="text-left">
-                        We are preparing the seemless process of program
-                        enrollment. In the meantime please do reach out our
-                        administration team through:
-                      </p>
-                      <ul className="mt-4">
-                        <li className="mb-2">
-                          <a
-                            href="tel:+62214302388"
-                            className=" transition-colors flex items-center gap-x-2 text-sm"
-                          >
-                            <Phone size={16} /> (+62)21-430 2388. Ext: 638.
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="mailto:admin@temastraininghub.com"
-                            className=" transition-colors flex items-center gap-x-2 text-sm"
-                          >
-                            <Mail size={16} /> admin@temastraininghub.com
-                          </a>
-                        </li>
-                      </ul>
-                    </DialogDescription>
-                  </DialogHeader>
-                  <DialogFooter>
-                    <DialogClose asChild>
-                      <Button type="submit">OK</Button>
-                    </DialogClose>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog> */}
-              {/* <Button variant="outline" size="lg" className="cursor-pointer">
-                Download Brochure
-              </Button> */}
+        <div className="flex flex-col items-start gap-x-10 md:flex-row">
+          <div className="flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1 space-y-4">
+              <div className="flex flex-wrap gap-2 mb-2">
+                <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-none">
+                  {data.level}
+                </Badge>
+                <Badge className="bg-green-100 text-green-800 hover:bg-green-200 border-none">
+                  Enrolling Now
+                </Badge>
+              </div>
+              <h1 className="text-3xl leading-tight md:text-4xl lg:text-5xl font-bold tracking-tight text-base-blue">
+                {data.title}
+              </h1>
+              <p className="text-lg text-muted-foreground">{data.brief}</p>
             </div>
           </div>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 100,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="w-full md:min-w-64"
+          >
+            <Card className="p-6 shadow-lg shrink-0 mt-7">
+              <div className="space-y-4">
+                <div className="space-y-4">
+                  <div className="text-sm font-bold text-gray-500 uppercase border-b pb-1">
+                    Program Investment
+                  </div>
+
+                  {data.prices.map((price) => (
+                    <>
+                      <div className="flex items-baseline flex-col gap-0">
+                        <p className="text-sm text-gray-500 font-bold">
+                          {price.label}
+                        </p>
+                        <p className="text-2xl font-bold text-base-gold leading-tight">
+                          {price.price}
+                        </p>
+                      </div>
+                    </>
+                  ))}
+                </div>
+                <div className="pt-0">
+                  <div className="grid gap-3">
+                    <a
+                      href="https://forms.office.com/r/vyyxPmdawQ"
+                      target="_blank"
+                      className="text-center bg-base-blue py-2 px-4 font-medium rounded text-white inline-block hover:bg-base-dark-blue cursor-pointer"
+                    >
+                      Enroll Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { JSX, ReactNode, useLayoutEffect, useState } from "react";
 import { Button } from "./components/ui/button";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
+import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import logo from "./assets/logo.png";
 import temas from "./assets/temasgroup.png";
@@ -51,6 +51,28 @@ function App() {
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeClass = "text-sm font-bold transition-colors";
+  const defaultClass =
+    "text-sm font-medium transition-colors hover:text-primary";
+
+  const navMenu = [
+    {
+      label: "Home",
+      to: "/",
+    },
+    {
+      label: "About",
+      to: "/about-us",
+    },
+    {
+      label: "Programs",
+      to: "/programs",
+    },
+    {
+      label: "Contact",
+      to: "/contact-us",
+    },
+  ];
 
   return (
     <header className="sticky top-0 py-2 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -63,30 +85,16 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link
-            to="/"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Home
-          </Link>
-          <Link
-            to="about-us"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            About
-          </Link>
-          <Link
-            to="programs"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Programs
-          </Link>
-          <Link
-            to="contact-us"
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Contact
-          </Link>
+          {navMenu.map((menu) => (
+            <NavLink
+              to={menu.to}
+              className={({ isActive }) =>
+                isActive ? activeClass : defaultClass
+              }
+            >
+              {menu.label}
+            </NavLink>
+          ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
