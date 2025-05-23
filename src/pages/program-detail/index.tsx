@@ -26,6 +26,7 @@ type Program = {
   materials: string;
   level: string;
   prices: PriceObject[];
+  schedules: string[];
 };
 
 type PriceObject = {
@@ -83,6 +84,12 @@ function ProgramDetail() {
         "Basic International Code of Safety for Ships using Gases or other Low-flashpoint Fuels Certificate (Basic IGF Code)",
       materials: "Books, Handouts, Tools, Equipment",
       level: "Basic",
+      schedules: [
+        "June 9th, 2025",
+        "June 16th, 2025",
+        "June 23rd, 2025",
+        "June 30th, 2025",
+      ],
     },
     "igf-code-advanced": {
       title:
@@ -128,6 +135,12 @@ function ProgramDetail() {
         "Advanced International Code of Safety for Ships using Gases or other Low-flashpoint Fuels (Advanced IGF Code) Certificate",
       materials: "Books, Handouts, Tools, Equipment",
       level: "Advance",
+      schedules: [
+        "June 9th, 2025",
+        "June 16th, 2025",
+        "June 23rd, 2025",
+        "June 30th, 2025",
+      ],
     },
   };
 
@@ -151,6 +164,7 @@ function ProgramDetail() {
     >
       <main className="flex-1">
         <HeroSection data={program} />
+        <ScheduleSection data={program} />
         <ProgramOverview data={program} />
         {/* <ProgramTabs />
         <FacultySection />
@@ -166,7 +180,7 @@ type DataProps = {
 
 function HeroSection({ data }: DataProps) {
   return (
-    <section className="relative bg-slate-50">
+    <section className="relative bg-slate-100">
       <div className="container pt-6">
         <Breadcrumb>
           <BreadcrumbList>
@@ -184,7 +198,7 @@ function HeroSection({ data }: DataProps) {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="container py-12 md:py-16">
+      <div className="container pt-12 pb-20 md:pt-16 md:pb-20">
         <div className="flex flex-col items-start gap-x-10 md:flex-row">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="flex-1 space-y-4">
@@ -251,6 +265,46 @@ function HeroSection({ data }: DataProps) {
             </Card>
           </motion.div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function ScheduleSection({ data }: DataProps) {
+  return (
+    <section className="bg-slate-50">
+      <div className="container">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          <div className="bg-white md:p-6 p-4 rounded-2xl shadow-lg relative z-10 -mt-10">
+            <div className="flex flex-wrap md:gap-0 gap-4">
+              {data.schedules.map((schedule, index) => (
+                <div className="w-full md:rounded-none rounded bg-slate-100 md:bg-white md:flex-1 md:border-r border-slate-400 md:pl-4 md:pr-4 md:first:pl-0 md:last:pr-0 md:last:border-none">
+                  <div className="text-center bg-base-dark-blue text-white text-xs py-2 px-3 rounded font-bold mb-2">
+                    Batch {index + 1}
+                  </div>
+                  <p className="text-center mb-2">
+                    Monday, <strong>{schedule}</strong>
+                  </p>
+                  <p className="text-muted-foreground text-xs text-center md:mb-0 mb-2">
+                    {data.duration}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -421,7 +475,7 @@ function ProgramOverview({ data }: DataProps) {
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-12 md:py-16 ">
       <div className="container">
         <motion.div
           initial={{
@@ -442,7 +496,7 @@ function ProgramOverview({ data }: DataProps) {
               <p>{data.goals}</p>
               <div className="pt-4">
                 <h2 className="text-2xl md:text-3xl font-bold mb-4">Content</h2>
-                <ul className="grid gap-3 bg-slate-50 border rounded-md p-6">
+                <ul className="grid gap-3 bg-slate-100 border rounded-md p-6">
                   {data.syllabus.map((syllabus, index) => (
                     <li className="flex items-start">
                       <p className="whitespace-nowrap w-28 shrink-0">
@@ -455,17 +509,19 @@ function ProgramOverview({ data }: DataProps) {
               </div>
             </div>
             <div className="space-y-6">
-              <div className="bg-slate-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4">Key Details</h3>
+              <div className="bg-slate-100 border p-6 rounded-lg">
+                {/* <h3 className="text-xl font-semibold mb-4">Key Details</h3> */}
                 <div className="space-y-4">
                   {keyDetails.map((detail, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="text-primary">{detail.icon}</div>
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="text-base-blue">{detail.icon}</div>
                       <div>
                         <div className="text-sm text-muted-foreground">
                           {detail.label}
                         </div>
-                        <div className="font-medium">{detail.value}</div>
+                        <div className="font-medium text-sm">
+                          {detail.value}
+                        </div>
                       </div>
                     </div>
                   ))}
